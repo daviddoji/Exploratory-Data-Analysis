@@ -1,7 +1,5 @@
-# Exploratory-Data-Analysis
+# Exploratory Data Analysis - Assignment 2
 ========================================================
-
-#Assignment 2
 
 Instructions
 -------------
@@ -58,7 +56,7 @@ as long as each of those files is in your current working directory (check by ca
 Assignment
 ----------
 
-The overall goal of this assignment is to explore the National Emissions Inventory database and see what it say about fine particulate matter pollution in the United states over the 10-year period 19992008. You may use any R package you want to support your analysis.
+The overall goal of this assignment is to explore the National Emissions Inventory database and see what it say about fine particulate matter pollution in the United states over the 10-year period 1999-2008. You may use any R package you want to support your analysis.
 
 ### Questions
 
