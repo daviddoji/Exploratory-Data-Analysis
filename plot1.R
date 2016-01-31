@@ -1,6 +1,6 @@
 # Preliminaries:
 # Load the needed packages
-packages <- c("ggplot2")
+packages <- c("")
 sapply(packages, require, character.only = TRUE, quietly = TRUE)
 
 
@@ -27,21 +27,24 @@ NEI <- readRDS("./data/exdata_data_NEI_data/summarySCC_PM25.rds")
 
 
 # Split the data into subsets getting proper column names
-PM2p5 <- aggregate(list(Emissions = NEI$Emissions), list(year = NEI$year), sum)
+PM2p5 <- aggregate(list(Emissions = NEI$Emissions), 
+                   list(year = NEI$year), 
+                   sum)
 # Alterhative way using a formula x~y
 # PM2p5 <- aggregate(Emissions ~ year, NEI, sum)
 
 
 # Open PNG graphics device
-png(file = "plot1.png", width = 480, height = 480)
+png("plot1.png", width = 480, height = 480)
 
 
 # Set transparent background and plot Graph 1
 par(bg = NA)
-myBarplot <- barplot(PM2p5$Emissions/10^6, names.arg = PM2p5$year,
-                  xlab="Year",
-                  ylab="PM2.5 Emissions, Mill. Tons",
-                  main="Total PM2.5 Emissions From All US Sources")
+myBarplot <- barplot(PM2p5$Emissions/10^6, 
+                     names.arg = PM2p5$year,
+                     xlab="Year",
+                     ylab="PM2.5 Emissions, Mt",
+                     main="Total PM2.5 Emissions in US")
 
 # Add lines and points to barplot graphs 
 # As explained here: http://www.r-bloggers.com/adding-lines-or-points-to-an-existing-barplot/
