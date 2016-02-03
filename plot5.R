@@ -38,12 +38,11 @@ NEI_Baltimore_vehicles <- aggregate(list(Emissions = NEI_Baltimore_vehicles$Emis
                            sum)
 
 
-# Open PNG graphics device
-png("plot5.png", width = 480, height = 480)
+# Open PNG graphics device with transparent background
+png("plot5.png", width = 480, height = 480, bg = "transparent")
 
 
-# Set transparent background and plot Graph 5
-par(bg = NA)
+# Plot Graph 5
 myBarplot <- barplot(NEI_Baltimore_vehicles$Emissions, 
                      names.arg = NEI_Baltimore_vehicles$year,
                      xlab="Year",
