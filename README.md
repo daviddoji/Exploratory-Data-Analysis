@@ -18,6 +18,8 @@ The data for this assignment are available from the course web site as a single 
 
 The zip file contains two files:
 
+2. Source Classification Code Table (``Source_Classification_Code.rds``): This table provides a mapping from the SCC digit strings int he Emissions table to the actual name of the PM2.5 source. The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful. For example, source "10100101" is known as "Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal".
+
 1. PM2.5 Emissions Data (``summarySCC_PM25.rds``): This file contains a data frame with all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008. For each year, the table contains number of **tons** of PM2.5 emitted from a specific type of source for the entire year. Here are the first few rows.
 
 
@@ -39,7 +41,6 @@ The zip file contains two files:
 * ``type``: The type of source (point, non-point, on-road, or non-road)
 * ``year``: The year of emissions recorded
 
-2. Source Classification Code Table (``Source_Classification_Code.rds``): This table provides a mapping from the SCC digit strings int he Emissions table to the actual name of the PM2.5 source. The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful. For example, source "10100101" is known as "Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal".
 
 You can read each of the two files using the ``readRDS()`` function in R. For example, reading in each file can be done with the following code:
 
