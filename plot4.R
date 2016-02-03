@@ -26,7 +26,7 @@ SCC <- readRDS("./data/exdata_data_NEI_data/Source_Classification_Code.rds")
 # [1] 11717    15
 
 
-# Subset all rows containing [C-c]oal of Short.Name column from SCC data frame
+# Subset all rows containing [C-c]oal in Short.Name column from SCC data frame
 coalRelated <- SCC[grep("coal", SCC$Short.Name, ignore.case = T), ]
 # Subset all rows from NEI with same SCC as in coalRelated
 NEI_coalRelated <- NEI[NEI$SCC %in% coalRelated$SCC, ]
@@ -36,12 +36,11 @@ coalEmissions <- aggregate(list(Emissions = NEI_coalRelated$Emissions),
                            sum)
 
 
-# Open PNG graphics device
-png("plot4.png", width = 480, height = 480)
+# Open PNG graphics device with transparent background
+png("plot1.png", width = 480, height = 480, bg = "transparent")
 
 
-# Set transparent background and plot Graph 2
-par(bg = NA)
+# Plot Graph 4
 myBarplot <- barplot(coalEmissions$Emissions/10^3, 
                      names.arg = coalEmissions$year,
                      xlab="Year",
