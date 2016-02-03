@@ -38,12 +38,11 @@ PM2p5_Baltimore <- aggregate(list(Emissions = NEI_Baltimore$Emissions),
 # PM2p5 <- aggregate(Emissions ~ year, NEI, sum)
 
 
-# Open PNG graphics device
-png("plot2.png", width = 480, height = 480)
+# Open PNG graphics device with transparent background
+png("plot2.png", width = 480, height = 480, bg = "transparent")
 
 
-# Set transparent background and plot Graph 2
-par(bg = NA)
+# Plot Graph 2
 myBarplot <- barplot(PM2p5_Baltimore$Emissions/10^3, 
                      names.arg = PM2p5_Baltimore$year,
                      xlab="Year",
