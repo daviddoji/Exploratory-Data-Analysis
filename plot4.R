@@ -37,7 +37,7 @@ coalEmissions <- aggregate(list(Emissions = NEI_coalRelated$Emissions),
 
 
 # Open PNG graphics device with transparent background
-png("plot1.png", width = 480, height = 480, bg = "transparent")
+png("plot4.png", width = 480, height = 480, bg = "transparent")
 
 
 # Plot Graph 4
