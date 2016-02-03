@@ -43,18 +43,17 @@ png("plot3.png", width = 800, height = 500)
 
 
 # Plot Graph 3 
-g <- ggplot(NEI_Baltimore, aes(factor(year), Emissions, fill = type))
-
+g <- ggplot(NEI_Baltimore, aes(factor(year), Emissions, fill = year))
 # stat="identity" for heights of the bars to represent values in the data 
-g + geom_bar(stat="identity", width = .7, alpha = .7) + 
-    # Remove the legend
-    guides(fill=FALSE) +
-    # classic dark-on-light ggplot2 theme
-    theme_bw(base_size = 15) +
-    # grid with 4 types side by side
-    facet_grid(~ type) +
-    labs(x = "Year", y = "PM2.5 Emissions, t") +
-    labs(title = "Total PM2.5 Emissions in Baltimore City by Source Type")
+g + geom_bar(stat = "identity", width = .7, alpha = .7) + 
+        # Remove the legend
+        guides(fill = FALSE) +
+        # classic dark-on-light ggplot2 theme
+        theme_bw(base_size = 15) +
+        # grid with 4 types side by side
+        facet_grid(~ type) +
+        labs(x = "Year", y = "PM2.5 Emissions, t") +
+        labs(title = "Total PM2.5 Emissions in Baltimore City by Source Type")
 
 
 # Close graphics device
